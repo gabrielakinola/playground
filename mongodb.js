@@ -37,24 +37,24 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (err, client) => {
     }
   );
 
-    db.collection("users").insertMany(
-      [
-        {
-          name: "Gabriel",
-          age: 23,
-        },
-        {
-          name: "Tricia",
-          age: 20,
-        },
-      ],
-      (err, result) => {
-        if (err) {
-          return console.log("unable to inset users");
-        }
-        console.log(result);
+  db.collection("users").insertMany(
+    [
+      {
+        name: "Gabriel",
+        age: 23,
+      },
+      {
+        name: "Tricia",
+        age: 20,
+      },
+    ],
+    (err, result) => {
+      if (err) {
+        return console.log("unable to inset users");
       }
-    );
+      console.log(result);
+    }
+  );
   db.collection("tasks").insertMany(
     [
       {
@@ -117,7 +117,7 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (err, client) => {
       console.log(tasks);
     });
 
-  Updating documents
+  // Updating documents
   db.collection("tasks")
     .updateMany(
       {

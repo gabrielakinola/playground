@@ -22,6 +22,7 @@ const add = (a, b) => {
 };
 
 //Without promise chaining
+
 add(1, 2).then((sum) => {
   console.log(sum);
 });
